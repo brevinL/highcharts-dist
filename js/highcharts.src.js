@@ -19017,8 +19017,6 @@
 		                })
 		                .add(item.legendGroup);
 
-		            item.legendGroup.attr('aria-label', "Hide or show '" + item.legendItem.textStr + "'");
-
 		            // Get the baseline for the first item - the font size is equal for
 		            // all
 		            if (!legend.baseline) {
@@ -19048,6 +19046,9 @@
 
 		        // Colorize the items
 		        legend.colorizeItem(item, item.visible);
+		        console.log(item);
+		        console.log(item.legendItem);
+		        item.legendGroup.attr('aria-label', "Hide or show '" + item.legendItem.textStr + "'");
 
 		        // Take care of max width and text overflow (#6659)
         

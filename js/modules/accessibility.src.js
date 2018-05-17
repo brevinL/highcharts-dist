@@ -1205,6 +1205,8 @@
 		            }
 		        ));
 
+		    chart.container.setAttribute('aria-label', chartTitle);
+    
 		    // Add SVG title tag if it is set
 		    if (svgContainerTitle.length) {
 		        titleElement = doc.createElementNS(

@@ -386,10 +386,6 @@ Highcharts.Legend.prototype = {
         // Colorize the items
         legend.colorizeItem(item, item.visible);
 
-        // aria label legend items
-        var label = 'Hide or show ' + item.legendItem.textStr + ' plot';
-        item.legendGroup.attr('aria-label', label);
-
         // Take care of max width and text overflow (#6659)
         
             li.css({

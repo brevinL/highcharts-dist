@@ -735,10 +735,8 @@ H.Chart.prototype.callbacks.push(function (chart) {
         titleElement.id = titleId;
         descElement.parentNode.insertBefore(titleElement, descElement);
 
-        titleElement.setAttribute('aria-hidden', "true");
-        titleElement.setAttribute('style', 'display:none;visibility:hidden');
-        descElement.setAttribute('aria-hidden', "true");
-        descElement.setAttribute('style', 'display:none;visibility:hidden');
+        titleElement.parentNode.remove(titleElement);
+        descElement.parentNode.remove(descElement);
     }
 
     chart.renderTo.setAttribute('role', 'region');

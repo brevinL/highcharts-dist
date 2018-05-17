@@ -722,7 +722,7 @@ H.Chart.prototype.callbacks.push(function (chart) {
 
     var chartLabel = 'Interactive chart. ' + chartTitle + '. ';
     chartLabel += 'Use tab to nagviate among element set. ';
-    chartLabel += 'Use left and right arrows to navigate within element set. '
+    chartLabel += 'Use left and right arrows to navigate within element set. ';
     chart.container.setAttribute('aria-label', chartLabel);
 
     // Add SVG title tag if it is set
@@ -735,8 +735,11 @@ H.Chart.prototype.callbacks.push(function (chart) {
         titleElement.id = titleId;
         descElement.parentNode.insertBefore(titleElement, descElement);
 
-        titleElement.parentNode.remove(titleElement);
-        descElement.parentNode.remove(descElement);
+        // Does not work in firefox or IE
+        titleElement.setAttribute('aria-hidden', true);
+        titleElement.setAttribute('style', 'display:none;visibility:hidden;');
+        descElement.setAttribute('aria-hidden', true);
+        descElement.setAttribute('style', 'display:none;visibility:hidden;');
     }
 
     chart.renderTo.setAttribute('role', 'region');

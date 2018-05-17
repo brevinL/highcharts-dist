@@ -736,7 +736,9 @@ H.Chart.prototype.callbacks.push(function (chart) {
         descElement.parentNode.insertBefore(titleElement, descElement);
 
         titleElement.setAttribute('aria-hidden', "true");
+        titleElement.setAttribute('style', 'display:none;visibility:hidden');
         descElement.setAttribute('aria-hidden', "true");
+        descElement.setAttribute('style', 'display:none;visibility:hidden');
     }
 
     chart.renderTo.setAttribute('role', 'region');

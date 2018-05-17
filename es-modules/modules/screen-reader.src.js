@@ -720,9 +720,9 @@ H.Chart.prototype.callbacks.push(function (chart) {
             }
         ));
 
-    var chartLabel = 'Interactive chart. ' + chartTitle;
-    chartLabel += 'Use tab to nagviate among element set.';
-    chartLabel += 'Use left and right arrows to navigate within element set.'
+    var chartLabel = 'Interactive chart. ' + chartTitle + '. ';
+    chartLabel += 'Use tab to nagviate among element set. ';
+    chartLabel += 'Use left and right arrows to navigate within element set. '
     chart.container.setAttribute('aria-label', chartLabel);
 
     // Add SVG title tag if it is set

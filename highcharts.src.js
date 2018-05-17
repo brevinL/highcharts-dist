@@ -19699,6 +19699,8 @@
 		            'highcharts-legend-item-hidden'
 		        );
 
+		        item.legendGroup.attr('aria-checked', visible);
+
         
 		        var legend = this,
 		            options = legend.options,
@@ -20030,7 +20032,8 @@
 
 		        // Always update the text
 		        legend.setText(item);
-		        console.log(item.legendItem.textContent);
+
+		        console.log(item.legendItem);
 		        console.log(item.legendGroup);
 		        item.legendGroup.attr('aria-label', 'Hide or show "' + item.legendItem.textContent + '"');
 

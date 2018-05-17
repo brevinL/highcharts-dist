@@ -620,13 +620,15 @@ H.Chart.prototype.addAccessibleContextMenuAttribs =    function () {
     if (exportList) {
         // Set tabindex on the menu items to allow focusing by script
         // Set role to give screen readers a chance to pick up the contents
-        each(exportList, function (item) {
-            if (item.tagName === 'DIV' &&
-                !(item.children && item.children.length)) {
-                item.setAttribute('role', 'menuitem');
-                item.setAttribute('tabindex', 0);
-                item.setAttribute('aria-label', item.textContent);
-            }
+        var e = exportList.filter(function(item) {
+            item.tagName === 'DIV' &&
+            !(item.children && item.children.length)
+        });
+        each(e, function (item, index) {
+            item.setAttribute('role', 'menuitem');
+            item.setAttribute('tabindex', 0);
+            item.setAttribute('aria-label',
+                item.textContent + ' ' + (index + 1) + ' of ' + e.length);
         });
         // Set accessibility properties on parent div
         exportList[0].parentNode.setAttribute('role', 'menu');

@@ -1105,13 +1105,15 @@
 		    if (exportList) {
 		        // Set tabindex on the menu items to allow focusing by script
 		        // Set role to give screen readers a chance to pick up the contents
-		        each(exportList, function (item) {
-		            if (item.tagName === 'DIV' &&
-		                !(item.children && item.children.length)) {
-		                item.setAttribute('role', 'menuitem');
-		                item.setAttribute('tabindex', 0);
-		                item.setAttribute('aria-label', item.textContent);
-		            }
+		        var e = exportList.filter(function(item) {
+		            item.tagName === 'DIV' &&
+		            !(item.children && item.children.length)
+		        });
+		        each(e, function (item, index) {
+		            item.setAttribute('role', 'menuitem');
+		            item.setAttribute('tabindex', 0);
+		            item.setAttribute('aria-label',
+		                item.textContent + ' ' + (index + 1) + ' of ' + e.length);
 		        });
 		        // Set accessibility properties on parent div
 		        exportList[0].parentNode.setAttribute('role', 'menu');
@@ -2067,7 +2069,7 @@
 		        }
 		        // Focus
 		        this.highlightedLegendItemIx = ix;
-		        // this.setFocusToElement(items[ix].legendItem, items[ix].legendGroup);
+		        this.setFocusToElement(items[ix].legendItem, items[ix].legendGroup);
 		        fireEvent(items[ix].legendGroup.element, 'mouseover');
 		        return true;
 		    }
@@ -2449,7 +2451,7 @@
 		            init: function (direction) {
 		                each(chart.legend.allItems, function (item) {
 		                    item.legendGroup.element.setAttribute('tabindex', '-1');
-		                    item.legendGroup.element.setAttribute('role', 'button');
+		                    item.legendGroup.element.setAttribute('role', 'checkbox');
 		                    item.legendGroup.element.setAttribute(
 		                        'aria-label',
 		                        chart.langFormat(

@@ -761,7 +761,7 @@ H.Chart.prototype.highlightLegendItem = function (ix) {
         }
         // Focus
         this.highlightedLegendItemIx = ix;
-        // this.setFocusToElement(items[ix].legendItem, items[ix].legendGroup);
+        this.setFocusToElement(items[ix].legendItem, items[ix].legendGroup);
         fireEvent(items[ix].legendGroup.element, 'mouseover');
         return true;
     }
@@ -1143,7 +1143,7 @@ H.Chart.prototype.addKeyboardNavigationModules = function () {
             init: function (direction) {
                 each(chart.legend.allItems, function (item) {
                     item.legendGroup.element.setAttribute('tabindex', '-1');
-                    item.legendGroup.element.setAttribute('role', 'button');
+                    item.legendGroup.element.setAttribute('role', 'checkbox');
                     item.legendGroup.element.setAttribute(
                         'aria-label',
                         chart.langFormat(

@@ -446,11 +446,9 @@ Highcharts.Legend.prototype = {
 
         // Always update the text
         legend.setText(item);
-        if (!li) {
-            console.log(item.legendItem.textContent);
-            console.log(item.legendGroup);
-            item.legendGroup.attr('aria-label', 'Hide or show "' + item.legendItem.textContent + '"');
-        }
+        console.log(item.legendItem.textContent);
+        console.log(item.legendGroup);
+        item.legendGroup.attr('aria-label', 'Hide or show "' + item.legendItem.textContent + '"');
 
         // calculate the positions for the next line
         bBox = li.getBBox();

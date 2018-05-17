@@ -761,7 +761,7 @@ H.Chart.prototype.highlightLegendItem = function (ix) {
         }
         // Focus
         this.highlightedLegendItemIx = ix;
-        this.setFocusToElement(items[ix].legendItem, items[ix].legendGroup);
+        // this.setFocusToElement(items[ix].legendItem, items[ix].legendGroup);
         fireEvent(items[ix].legendGroup.element, 'mouseover');
         return true;
     }

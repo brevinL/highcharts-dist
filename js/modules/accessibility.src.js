@@ -837,7 +837,7 @@
 		                'role',
 		                this.options.exposeElementToA11y ? 'img' : 'region'
 		            );
-		            seriesEl.setAttribute('tabindex', '-1');
+		            seriesEl.setAttribute('tabindex', '0');
 		            seriesEl.setAttribute(
 		                'aria-label',
 		                stripTags(
@@ -1291,6 +1291,7 @@
 
 		    // Hide text elements from screen readers
 		    each(textElements, function (el) {
+		        el.setAttribute('tabindex', '-1');
 		        el.setAttribute('aria-hidden', 'true');
 		    });
 
@@ -2061,7 +2062,7 @@
 		        }
 		        // Focus
 		        this.highlightedLegendItemIx = ix;
-		        this.setFocusToElement(items[ix].legendItem, items[ix].legendGroup);
+		        // this.setFocusToElement(items[ix].legendItem, items[ix].legendGroup);
 		        fireEvent(items[ix].legendGroup.element, 'mouseover');
 		        return true;
 		    }

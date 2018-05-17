@@ -352,7 +352,7 @@ H.Series.prototype.setA11yDescription = function () {
                 'role',
                 this.options.exposeElementToA11y ? 'img' : 'region'
             );
-            seriesEl.setAttribute('tabindex', '-1');
+            seriesEl.setAttribute('tabindex', '0');
             seriesEl.setAttribute(
                 'aria-label',
                 stripTags(
@@ -806,6 +806,7 @@ H.Chart.prototype.callbacks.push(function (chart) {
 
     // Hide text elements from screen readers
     each(textElements, function (el) {
+        el.setAttribute('tabindex', '-1');
         el.setAttribute('aria-hidden', 'true');
     });
 

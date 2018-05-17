@@ -1219,6 +1219,8 @@
 		        titleElement.textContent = svgContainerTitle;
 		        titleElement.id = titleId;
 		        descElement.parentNode.insertBefore(titleElement, descElement);
+
+		        titleElement.setAttribute('aria-hidden', "true");
 		    }
 
 		    chart.renderTo.setAttribute('role', 'region');

@@ -1847,10 +1847,10 @@ extend(SVGRenderer.prototype, /** @lends Highcharts.SVGRenderer.prototype */ {
                 '';
 
         // Add description
-        desc = this.createElement('desc').add();
-        desc.element.appendChild(
-            doc.createTextNode('Created with @product.name@ @product.version@')
-        );
+        // desc = this.createElement('desc').add();
+        // desc.element.appendChild(
+        //     doc.createTextNode('Created with @product.name@ @product.version@')
+        // );
 
         /**
          * A pointer to the `defs` node of the root SVG.

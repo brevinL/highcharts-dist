@@ -19961,6 +19961,8 @@
 		                    (itemClassName ? ' ' + itemClassName : '') +
 		                    (isSeries ? ' highcharts-series-' + item.index : '')
 		                )
+		                .setAttribute('role', 'checkbox')
+		                .setAttribute('aria-checked', false)
 		                .attr({ zIndex: 1 })
 		                .add(legend.scrollGroup);
 
@@ -20030,6 +20032,9 @@
 
 		        // Always update the text
 		        legend.setText(item);
+		        if (!li) {
+		            item.legendGroup.setAttribute('aria-label', 'Hide or show "' + legend.textContent + '"');
+		        }
 
 		        // calculate the positions for the next line
 		        bBox = li.getBBox();
@@ -20480,6 +20485,7 @@
 		                    )
 		                    .on('click', function () {
 		                        legend.scroll(-1, animation);
+		                        legend.setAttribute('aria-checked', false);
 		                    })
 		                    .add(nav);
 
@@ -20500,6 +20506,7 @@
 		                    )
 		                    .on('click', function () {
 		                        legend.scroll(1, animation);
+		                        legend.setAttribute('aria-checked', true);
 		                    })
 		                    .add(nav);
 		            }

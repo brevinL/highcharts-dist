@@ -4225,10 +4225,10 @@
 		                '';
 
 		        // Add description
-		        // desc = this.createElement('desc').add();
-		        // desc.element.appendChild(
-		        //     doc.createTextNode('Created with Highcharts 6.1.0-modified')
-		        // );
+		        desc = this.createElement('desc').add();
+		        desc.element.appendChild(
+		            doc.createTextNode('Created with Highcharts 6.1.0-modified')
+		        );
 
 		        /**
 		         * A pointer to the `defs` node of the root SVG.

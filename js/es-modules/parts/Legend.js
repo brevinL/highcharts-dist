@@ -335,9 +335,7 @@ Highcharts.Legend.prototype = {
                     (itemClassName ? ' ' + itemClassName : '') +
                     (isSeries ? ' highcharts-series-' + item.index : '')
                 )
-                .setAttribute('role', 'checkbox')
-                .setAttribute('aria-checked', false)
-                .attr({ zIndex: 1 })
+                .attr({ 'zIndex': 1, 'role': 'checkbox', 'aria-checked': false})
                 .add(legend.scrollGroup);
 
             // Generate the list item text and add it to the group
@@ -398,7 +396,7 @@ Highcharts.Legend.prototype = {
         // Always update the text
         legend.setText(item);
         if (!li) {
-            item.legendGroup.setAttribute('aria-label', 'Hide or show "' + legend.textContent + '"');
+            item.legendGroup.attr('aria-label', 'Hide or show "' + legend.textContent + '"');
         }
 
         // calculate the positions for the next line

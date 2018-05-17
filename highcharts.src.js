@@ -19963,7 +19963,7 @@
 		                    (itemClassName ? ' ' + itemClassName : '') +
 		                    (isSeries ? ' highcharts-series-' + item.index : '')
 		                )
-		                .attr({ 'zIndex': 1, 'role': 'checkbox', 'aria-checked': false})
+		                .attr({ 'zIndex': 1, 'role': 'checkbox', 'aria-checked': false })
 		                .add(legend.scrollGroup);
 
 		            // Generate the list item text and add it to the group
@@ -19982,6 +19982,8 @@
 		                    zIndex: 2
 		                })
 		                .add(item.legendGroup);
+
+		            item.legendGroup.attr('aria-label', "Hide or show '" + item.legendItem.textStr + "'");
 
 		            // Get the baseline for the first item - the font size is equal for
 		            // all
@@ -20032,10 +20034,6 @@
 
 		        // Always update the text
 		        legend.setText(item);
-
-		        console.log(item.legendItem);
-		        console.log(item.legendGroup);
-		        item.legendGroup.attr('aria-label', 'Hide or show "' + item.legendItem.textContent + '"');
 
 		        // calculate the positions for the next line
 		        bBox = li.getBBox();

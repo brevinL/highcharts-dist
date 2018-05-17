@@ -1,5 +1,5 @@
 /*
- Highcharts JS v6.1.0-modified (2018-05-16)
+ Highcharts JS v6.1.0-modified (2018-05-17)
  Old IE (v6, v7, v8) module for Highcharts v6+.
 
  (c) 2010-2017 Highsoft AS

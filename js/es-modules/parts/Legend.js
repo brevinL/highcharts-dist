@@ -396,7 +396,9 @@ Highcharts.Legend.prototype = {
         // Always update the text
         legend.setText(item);
         if (!li) {
-            item.legendGroup.attr('aria-label', 'Hide or show "' + legend.textContent + '"');
+            console.log(item.legendItem.textContent);
+            console.log(item.legendGroup);
+            item.legendGroup.attr('aria-label', 'Hide or show "' + item.legendItem.textContent + '"');
         }
 
         // calculate the positions for the next line
@@ -844,7 +846,6 @@ Highcharts.Legend.prototype = {
                     )
                     .on('click', function () {
                         legend.scroll(-1, animation);
-                        legend.setAttribute('aria-checked', false);
                     })
                     .add(nav);
 
@@ -863,7 +864,6 @@ Highcharts.Legend.prototype = {
                     )
                     .on('click', function () {
                         legend.scroll(1, animation);
-                        legend.setAttribute('aria-checked', true);
                     })
                     .add(nav);
             }

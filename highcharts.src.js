@@ -1,5 +1,5 @@
 /**
- * @license Highcharts JS v6.1.0-modified (2018-05-16)
+ * @license Highcharts JS v6.1.0-modified (2018-05-17)
  *
  * (c) 2009-2016 Torstein Honsi
  *
@@ -20031,7 +20031,9 @@
 		        // Always update the text
 		        legend.setText(item);
 		        if (!li) {
-		            item.legendGroup.attr('aria-label', 'Hide or show "' + legend.textContent + '"');
+		            console.log(item.legendItem.textContent);
+		            console.log(item.legendGroup);
+		            item.legendGroup.attr('aria-label', 'Hide or show "' + item.legendItem.textContent + '"');
 		        }
 
 		        // calculate the positions for the next line
@@ -20483,7 +20485,6 @@
 		                    )
 		                    .on('click', function () {
 		                        legend.scroll(-1, animation);
-		                        legend.setAttribute('aria-checked', false);
 		                    })
 		                    .add(nav);
 
@@ -20504,7 +20505,6 @@
 		                    )
 		                    .on('click', function () {
 		                        legend.scroll(1, animation);
-		                        legend.setAttribute('aria-checked', true);
 		                    })
 		                    .add(nav);
 		            }

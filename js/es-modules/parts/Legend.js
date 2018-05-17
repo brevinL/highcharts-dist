@@ -337,7 +337,9 @@ Highcharts.Legend.prototype = {
                     (itemClassName ? ' ' + itemClassName : '') +
                     (isSeries ? ' highcharts-series-' + item.index : '')
                 )
-                .attr({ 'zIndex': 1, 'role': 'checkbox', 'aria-checked': false })
+                .attr('zIndex', 1)
+                .attr('role', 'checkbox') 
+                .attr('aria-checked', false)
                 .add(legend.scrollGroup);
 
             // Generate the list item text and add it to the group
@@ -383,9 +385,10 @@ Highcharts.Legend.prototype = {
 
         // Colorize the items
         legend.colorizeItem(item, item.visible);
-        console.log(item);
-        console.log(item.legendItem);
-        item.legendGroup.attr('aria-label', "Hide or show '" + item.legendItem.textStr + "'");
+
+        // aria label legend items
+        var label = 'Hide or show ' + item.legendItem.textStr;
+        item.legendGroup.attr('aria-label', label);
 
         // Take care of max width and text overflow (#6659)
         

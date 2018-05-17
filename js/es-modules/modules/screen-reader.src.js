@@ -621,8 +621,8 @@ H.Chart.prototype.addAccessibleContextMenuAttribs =    function () {
         // Set tabindex on the menu items to allow focusing by script
         // Set role to give screen readers a chance to pick up the contents
         var e = exportList.filter(function(item) {
-            item.tagName === 'DIV' &&
-            !(item.children && item.children.length)
+            return item.tagName === 'DIV' &&
+                !(item.children && item.children.length);
         });
         each(e, function (item, index) {
             item.setAttribute('role', 'menuitem');

@@ -795,7 +795,7 @@ H.Chart.prototype.callbacks.push(function (chart) {
 
     // Hide text elements from screen readers
     each(textElements, function (el) {
-        el.setAttribute('aria-hidden', 'false');
+        el.setAttribute('aria-hidden', 'true');
     });
 
     // Add top-secret screen reader region

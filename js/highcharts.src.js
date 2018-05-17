@@ -19001,7 +19001,7 @@
 		                    (isSeries ? ' highcharts-series-' + item.index : '')
 		                )
 		                .attr('zIndex', 1)
-		                .attr('role', 'checkbox') 
+		                .attr('role', 'checkbox')
 		                .attr('aria-checked', false)
 		                .add(legend.scrollGroup);
 
@@ -19050,7 +19050,7 @@
 		        legend.colorizeItem(item, item.visible);
 
 		        // aria label legend items
-		        var label = 'Hide or show ' + item.legendItem.textStr;
+		        var label = 'Hide or show ' + item.legendItem.textStr + ' plot';
 		        item.legendGroup.attr('aria-label', label);
 
 		        // Take care of max width and text overflow (#6659)

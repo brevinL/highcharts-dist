@@ -1280,7 +1280,13 @@
 
 		    // Hide text elements from screen readers
 		    each(textElements, function (el) {
-		        el.setAttribute('aria-hidden', 'true');
+		        el.setAttribute('role', 'checkbox');
+		        el.setAttribute('aria-checked', false);
+		        el.onclick = function () {
+		            el['aria-checked'] = !!el['aria-checked'];
+		        };
+		        el.setAttribute('aria-label', 'Hide or show "' + el.textContent + '"');
+		        el.setAttribute('aria-hidden', 'false');
 		    });
 
 		    // Add top-secret screen reader region

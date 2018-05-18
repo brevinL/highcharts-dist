@@ -1201,16 +1201,17 @@
 		        chartTitle = options.title.text || chart.langFormat(
 		            'accessibility.defaultChartTitle', { chart: chart }
 		        ),
+		        chartContainerLabel = options.lang.accessibility.chartContainerLabel ||
+		            chart.langFormat('accessibility.chartContainerLabel',
+		                { chart: chart }
+		        ),
 		        svgContainerTitle = stripTags(chart.langFormat(
 		            'accessibility.svgContainerTitle', {
 		                chartTitle: chartTitle
 		            }
 		        ));
 
-		    var chartLabel = 'Interactive chart. ' + chartTitle + '. ';
-		    chartLabel += 'Use tab to nagviate among element set. ';
-		    chartLabel += 'Use left and right arrows to navigate within element set. ';
-		    chart.container.setAttribute('aria-label', chartLabel);
+		    chart.container.setAttribute('aria-label', chartContainerLabel);
 
 		    // Add SVG title tag if it is set
 		    if (svgContainerTitle.length) {

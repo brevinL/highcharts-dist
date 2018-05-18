@@ -757,9 +757,6 @@ H.Chart.prototype.highlightLegendItem = function (ix) {
         // Focus
         this.highlightedLegendItemIx = ix;
         this.setFocusToElement(items[ix].legendItem, items[ix].legendGroup);
-        items[ix].legendGroup.element.lastChild
-            .setAttribute('aria-label',
-                items[ix].legendGroup.element.getAttribute('aria-label'));
         fireEvent(items[ix].legendGroup.element, 'mouseover');
         return true;
     }

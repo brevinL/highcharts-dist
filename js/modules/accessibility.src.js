@@ -1105,7 +1105,7 @@
 		    if (exportList) {
 		        // Set tabindex on the menu items to allow focusing by script
 		        // Set role to give screen readers a chance to pick up the contents
-		        var e = exportList.filter(function (item){
+		        var e = exportList.filter(function (item) {
 		            return item.tagName === 'DIV' &&
 		                !(item.children && item.children.length);
 		        });
@@ -2065,9 +2065,6 @@
 		        // Focus
 		        this.highlightedLegendItemIx = ix;
 		        this.setFocusToElement(items[ix].legendItem, items[ix].legendGroup);
-		        items[ix].legendGroup.element.lastChild
-		            .setAttribute('aria-label',
-		                items[ix].legendGroup.element.getAttribute('aria-label'));
 		        fireEvent(items[ix].legendGroup.element, 'mouseover');
 		        return true;
 		    }
